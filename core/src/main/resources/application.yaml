@@ -1,0 +1,16 @@
+short-url:
+  length: 7
+
+spring:
+  sql:
+    init:
+      mode: always
+  kafka:
+    bootstrap-servers: localhost:29092
+  datasource:
+    url: jdbc:postgresql://localhost:4895/url_shortener
+    username: postgres
+    password: postgres
+
+statistic-producer:
+  topic-name: statistic
