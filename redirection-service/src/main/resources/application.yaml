@@ -1,0 +1,27 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: redirection-service
+  boot:
+    admin:
+      client:
+        url: http://localhost:9000
+  kafka:
+    bootstrap-servers: localhost:29092
+  data:
+    mongodb:
+      port: 27017
+      host: localhost
+      database: url_shortener
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+producer:
+  click-details:
+    topic-name: click-details

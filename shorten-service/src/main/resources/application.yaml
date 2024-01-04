@@ -1,0 +1,30 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: shorten-service
+  boot:
+    admin:
+      client:
+        url: http://localhost:9000
+  data:
+    mongodb:
+      port: 27017
+      host: localhost
+      database: url_shortener
+
+springdoc:
+  api-docs:
+    path: /api-docs
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+short-url:
+  length: 7

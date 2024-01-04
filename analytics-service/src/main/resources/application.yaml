@@ -1,0 +1,20 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: analytics-service
+  boot:
+    admin:
+      client:
+        url: http://localhost:9000
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:29092
+      auto-offset-reset: latest
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

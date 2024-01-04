@@ -1,0 +1,10 @@
+spring:
+  boot:
+    admin:
+      client:
+        url: http://admin:9000
+  kafka:
+    bootstrap-servers: kafka:29092
+  data:
+    mongodb:
+      host: mongodb
