@@ -10,8 +10,10 @@ spring:
         url: http://localhost:9000
   kafka:
     consumer:
-      bootstrap-servers: localhost:29092
+      bootstrap-servers: localhost:9094
       auto-offset-reset: latest
+  jmx:
+    enabled: true
 
 management:
   endpoints:

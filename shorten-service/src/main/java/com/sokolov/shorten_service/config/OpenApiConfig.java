@@ -7,12 +7,14 @@ import org.springframework.context.annotation.Configuration;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.servers.Server;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
 @Configuration
 public class OpenApiConfig {
 
     @Value("${server.servlet.context-path}")
-    private String contextPath;
+    private final String contextPath;
 
     @Bean
     public OpenAPI openAPI() {

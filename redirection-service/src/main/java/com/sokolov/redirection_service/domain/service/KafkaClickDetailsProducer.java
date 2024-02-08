@@ -13,7 +13,7 @@ import lombok.RequiredArgsConstructor;
 public class KafkaClickDetailsProducer {
 
     @Value("${producer.click-details.topic-name}")
-    private String topicName;
+    private final String topicName;
 
     private final KafkaTemplate<String, ClickDetails> kafkaTemplate;
 
