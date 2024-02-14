@@ -26,5 +26,6 @@ management:
       exposure:
         include: "*"
 
-short-url:
-  length: 7
+api:
+  id-generator-service:
+    url: http://localhost:8083/api/identifiers

@@ -8,6 +8,6 @@ import com.sokolov.redirection_service.persistence.model.UrlDetailsEntity;
 
 public interface UrlDetailsRepository extends MongoRepository<UrlDetailsEntity, String> {
 
-    Optional<UrlDetailsEntity> findByShortUrl(String shortUrl);
+    Optional<UrlDetailsEntity> findByShortUrlIdentifier(String shortUrl);
 
 }

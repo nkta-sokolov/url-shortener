@@ -22,7 +22,7 @@ public class ShortUrlController {
     @PostMapping
     public ShortUrlResponse shortenUrl(@RequestBody ShortUrlRequest request) {
         UrlDetails urlDetails = shortUrlService.shortenUrl(request.targetUrl());
-        return new ShortUrlResponse(urlDetails.getTargetUrl(), urlDetails.getShortUrl(), urlDetails.getCreatedAt());
+        return new ShortUrlResponse(urlDetails.getTargetUrl(), urlDetails.getShortUrlIdentifier(), urlDetails.getCreatedAt());
     }
 
 }

@@ -11,7 +11,7 @@ public class UrlDetails {
 
     private String targetUrl;
 
-    private String shortUrl;
+    private String shortUrlIdentifier;
 
     private LocalDateTime createdAt;
 

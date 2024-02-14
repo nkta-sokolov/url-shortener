@@ -19,7 +19,7 @@ public class UrlDetailsEntity {
 
     private String targetUrl;
 
-    private String shortUrl;
+    private String shortUrlIdentifier;
 
     @CreatedDate
     private LocalDateTime createdAt;

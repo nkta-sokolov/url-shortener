@@ -17,14 +17,14 @@ public class UrlDetailsMongoService {
 
     private final UrlDetailsMapper urlDetailsMapper;
 
-    public UrlDetails save(String shortUrl, String targetUrl) {
-        UrlDetailsEntity urlDetailsEntity = urlDetailsMapper.domainToData(targetUrl, shortUrl);
+    public UrlDetails save(String shortUrlIdentifier, String targetUrl) {
+        UrlDetailsEntity urlDetailsEntity = urlDetailsMapper.domainToData(targetUrl, shortUrlIdentifier);
         UrlDetailsEntity savedUrlDetails = urlDetailsRepository.save(urlDetailsEntity);
         return urlDetailsMapper.dataToDomain(savedUrlDetails);
     }
 
-    public boolean existsByShortUrl(String shortUrl) {
-        return urlDetailsRepository.existsByShortUrl(shortUrl);
+    public boolean existsByShortUrlIdentifier(String shortUrlIdentifier) {
+        return urlDetailsRepository.existsByShortUrlIdentifier(shortUrlIdentifier);
     }
 
 }

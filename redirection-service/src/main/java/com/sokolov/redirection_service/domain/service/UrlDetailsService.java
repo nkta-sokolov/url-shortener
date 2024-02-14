@@ -25,7 +25,7 @@ public class UrlDetailsService {
 
     @Cacheable(CACHE_NAME)
     public String findTargetUrlOrElseThrowException(String shortUrl) {
-        return urlDetailsRepository.findByShortUrl(shortUrl)
+        return urlDetailsRepository.findByShortUrlIdentifier(shortUrl)
                 .map(UrlDetailsEntity::getTargetUrl)
                 .orElseThrow(() -> new RedirectionServiceException("Invalid short url"));
     }

@@ -8,10 +8,10 @@ import com.sokolov.shorten_service.persistence.model.UrlDetailsEntity;
 @Mapper(componentModel = "spring")
 public interface UrlDetailsMapper {
 
-    default UrlDetailsEntity domainToData(String targetUrl, String shortUrl){
+    default UrlDetailsEntity domainToData(String targetUrl, String shortUrlIdentifier){
         UrlDetailsEntity urlDetailsEntity = new UrlDetailsEntity();
         urlDetailsEntity.setTargetUrl(targetUrl);
-        urlDetailsEntity.setShortUrl(shortUrl);
+        urlDetailsEntity.setShortUrlIdentifier(shortUrlIdentifier);
         return urlDetailsEntity;
     }
 

@@ -18,7 +18,7 @@ public class UrlDetailsEntity {
 
     private String targetUrl;
 
-    private String shortUrl;
+    private String shortUrlIdentifier;
 
     private LocalDateTime createdAt;
 
