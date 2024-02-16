@@ -28,7 +28,6 @@
     <properties>
         <java.version>21</java.version>
         <spring.cloud.version>2023.0.0</spring.cloud.version>
-        <uuid-creator.version>5.3.7</uuid-creator.version>
         <lombok.mapstruct.binding.version>0.2.0</lombok.mapstruct.binding.version>
         <mapstruct.version>1.5.5.Final</mapstruct.version>
         <spring-boot.version>3.2.1</spring-boot.version>
