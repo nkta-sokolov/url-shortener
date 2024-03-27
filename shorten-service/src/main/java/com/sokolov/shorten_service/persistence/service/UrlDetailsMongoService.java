@@ -18,9 +18,9 @@ public class UrlDetailsMongoService {
     private final UrlDetailsMapper urlDetailsMapper;
 
     public UrlDetails save(String shortUrlIdentifier, String targetUrl) {
-        UrlDetailsEntity urlDetailsEntity = urlDetailsMapper.domainToData(targetUrl, shortUrlIdentifier);
+        UrlDetailsEntity urlDetailsEntity = urlDetailsMapper.domainToEntity(targetUrl, shortUrlIdentifier);
         UrlDetailsEntity savedUrlDetails = urlDetailsRepository.save(urlDetailsEntity);
-        return urlDetailsMapper.dataToDomain(savedUrlDetails);
+        return urlDetailsMapper.entityToDomain(savedUrlDetails);
     }
 
     public boolean existsByShortUrlIdentifier(String shortUrlIdentifier) {

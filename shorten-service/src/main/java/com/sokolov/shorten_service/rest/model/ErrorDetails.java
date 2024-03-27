@@ -1,4 +1,4 @@
 package com.sokolov.shorten_service.rest.model;
 
-public record ErrorResponse(String message) {
+public record ErrorDetails(String message) {
 }

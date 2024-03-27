@@ -1,4 +1,6 @@
 package com.sokolov.shorten_service.rest.model;
 
-public record ShortUrlRequest(String targetUrl) {
+import jakarta.validation.constraints.NotBlank;
+
+public record ShortUrlRequest(@NotBlank String targetUrl) {
 }

@@ -17,11 +17,11 @@ public class ClickDetailsConsumer {
     private final ClickDetailsService clickDetailsService;
 
     @KafkaListener(
-            containerFactory = "clickDetailsListenerContainerFactory",
             topics = "click-details",
-            groupId = "analytics"
+            groupId = "analytics",
+            containerFactory = "clickDetailsListenerContainerFactory"
     )
-    public void receiveClickDetails(@Payload ClickDetails clickDetails) {
+    public void receive(@Payload ClickDetails clickDetails) {
         log.debug("Received click details = {}", clickDetails);
         clickDetailsService.process(clickDetails);
     }

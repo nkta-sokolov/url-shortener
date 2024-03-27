@@ -7,11 +7,11 @@ import com.sokolov.shorten_service.client.model.IdResponse;
 
 @FeignClient(
         name = "idGeneratorServiceClient",
-        url = "${api.id-generator-service.url}"
+        url = "${api.id-generator-service.rest}"
 )
 public interface IdGeneratorServiceClient {
 
-    @PostMapping
+    @PostMapping("/identifiers")
     IdResponse generateId();
 
 }

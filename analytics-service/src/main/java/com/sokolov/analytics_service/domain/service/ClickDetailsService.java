@@ -22,9 +22,9 @@ public class ClickDetailsService {
 
     public void process(ClickDetails clickDetails) {
         String cityName = getCityName(clickDetails.getIp());
-        log.info("City name = {}", cityName);
+        log.debug("City name = {}", cityName);
         Client client = getClient(clickDetails);
-        log.info("Client = {}", client);
+        log.debug("Client = {}", client);
     }
 
     @SneakyThrows

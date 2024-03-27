@@ -1,8 +1,11 @@
 package com.sokolov.shorten_service.domain.service;
 
+import java.util.stream.Stream;
+
 import org.springframework.stereotype.Service;
 
 import com.sokolov.shorten_service.client.IdGeneratorServiceClient;
+import com.sokolov.shorten_service.domain.exception.ShortenServiceException;
 import com.sokolov.shorten_service.domain.model.UrlDetails;
 import com.sokolov.shorten_service.persistence.service.UrlDetailsMongoService;
 
@@ -17,16 +20,15 @@ public class ShortUrlService {
     private final IdGeneratorServiceClient idGeneratorServiceClient;
 
     public UrlDetails shortenUrl(String targetUrl) {
-        String shortUrlIdentifier = generateShortUrlIdentifier();
+        String shortUrlIdentifier = generateShortUrlIdentifier(targetUrl);
         return shortUrlMongoService.save(shortUrlIdentifier, targetUrl);
     }
 
-    private String generateShortUrlIdentifier() {
-        String shortUrlIdentifier;
-        do {
-            shortUrlIdentifier = idGeneratorServiceClient.generateId().identifier();
-        } while (shortUrlMongoService.existsByShortUrlIdentifier(shortUrlIdentifier));
-        return shortUrlIdentifier;
+    private String generateShortUrlIdentifier(String targetUrl) {
+        return Stream.generate(() -> idGeneratorServiceClient.generateId().identifier())
+                .dropWhile(shortUrlMongoService::existsByShortUrlIdentifier)
+                .findFirst()
+                .orElseThrow(() -> new ShortenServiceException("Can't generate short url identifier for target url = " + targetUrl));
     }
 
 }

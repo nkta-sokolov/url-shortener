@@ -1,0 +1,5 @@
+spring:
+  boot:
+    admin:
+      client:
+        url: http://admin:9000
