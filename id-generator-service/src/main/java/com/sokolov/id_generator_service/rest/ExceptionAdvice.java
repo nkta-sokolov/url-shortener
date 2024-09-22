@@ -14,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RestControllerAdvice
-public class RestExceptionHandler {
+public class ExceptionAdvice {
 
     @ExceptionHandler
     public ResponseEntity<ErrorDetails> handleThrowable(Throwable exception) {
